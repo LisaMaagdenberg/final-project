@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 app.set('views', './views');
 app.set('view engine', 'pug');
 app.use(express.static('statics'));
+app.use(express.static('statics/js'))
 
 // setting the tables
 var Webshopitem = sequelize.define('webshopitem', {
@@ -60,6 +61,17 @@ app.get('/jar-of-ideas', (req, res) =>{
 	Jarofideas.findAll({ order: [["id", "DESC"]]})
 	.then(function(JOI){
 		res.render('jar-of-ideas', {jarofideas: JOI});
+	})
+})
+
+app.get('/getyourword', (req, res)=>{
+	Word.find({
+  		order: [
+    		Sequelize.fn( 'RANDOM' ),
+  		]
+	})
+	.then(function(result){
+		res.send(result)
 	})
 })
 
@@ -205,6 +217,31 @@ sequelize.sync({force:true})
 	.then(function(){
 		Word.create({
 			word: "Rome"
+		})
+	})
+	.then(function(){
+		Word.create({
+			word: "Donald Duck"
+		})
+	})
+	.then(function(){
+		Word.create({
+			word: "Sandwich"
+		})
+	})
+	.then(function(){
+		Word.create({
+			word: "Chicken"
+		})
+	})
+	.then(function(){
+		Word.create({
+			word: "Ball"
+		})
+	})
+	.then(function(){
+		Word.create({
+			word: "Tea"
 		})
 	})
 	.then(function(){

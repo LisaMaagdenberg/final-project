@@ -13,3 +13,10 @@ html
 				img.thisJOIPhoto(src="img/"+post.img+".jpg")
 				p #{post.body}
 		include ../statics/pug/footer.pug
+
+	script.
+		$('.thisSmallPhoto').click(function(){
+			$.get('/getyourword', (word)=>{
+				alert('Yes! Get started with your own word! You got: \n'+word.word)
+			})
+		})
