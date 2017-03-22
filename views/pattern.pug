@@ -1,0 +1,14 @@
+html
+	head
+		title Pattern -- Supercool website 
+		include ../statics/pug/head-links.pug
+	body
+		include ../statics/pug/header.pug
+		#patternDiv
+			.container
+				img.thisBigPhoto(src="../img/"+pattern.img+".jpg")
+			#patternTitle 
+				h1 #{pattern.title} 
+		#patternContent
+			p #{pattern.body}
+		include ../statics/pug/footer.pug

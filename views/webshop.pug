@@ -4,5 +4,14 @@ html
 		include ../statics/pug/head-links.pug
 	body
 		include ../statics/pug/header.pug
-		
+		#webshopPage
+			each item in webshopitems
+				.webshopBox
+					a(href="/item/"+item.link) #{item.productname}
+					a(href="/item/"+item.link) 
+						img.thisCenteredPhoto(src="img/"+item.img+".jpg")
+					h4 #{item.description}
+					h4 &euro; #{item.price}
+					h4 Type: #{item.type}
+					h4 Size: #{item.size}
 		include ../statics/pug/footer.pug

@@ -4,5 +4,12 @@ html
 		include ../statics/pug/head-links.pug
 	body
 		include ../statics/pug/header.pug
-		
+		#clickMe
+			p.getAWord Click me to get a word: 
+			img.thisSmallPhoto(src="img/jar-of-ideas.jpg")
+		each post in jarofideas
+			.JOIbox
+				h1 #{post.title}
+				img.thisJOIPhoto(src="img/"+post.img+".jpg")
+				p #{post.body}
 		include ../statics/pug/footer.pug

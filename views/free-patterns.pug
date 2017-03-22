@@ -4,5 +4,10 @@ html
 		include ../statics/pug/head-links.pug
 	body
 		include ../statics/pug/header.pug
-		
+		each post in freepatterns
+			.FPbox
+				img.thisFPPhoto(src="img/"+post.img+".jpg")
+				h1 #{post.title}
+				p #{post.description}
+				a(href="pattern/"+post.link) See more
 		include ../statics/pug/footer.pug

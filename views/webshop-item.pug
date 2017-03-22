@@ -1,0 +1,20 @@
+html
+	head
+		title Item -- Supercool website 
+		include ../statics/pug/head-links.pug
+	body
+		include ../statics/pug/header.pug
+		#itemPage
+			#itemContent
+				h1 #{item.productname}
+				p #{item.body}
+				p Delivery time: #{item.delivery}
+				p Size: #{item.size}
+				h4 Price: #{item.price}
+				form.inputform
+					input(class="button" type="submit" value="I want this!")
+			#itemPhoto
+				img.thisTopPhoto(src="/img/"+item.img+".jpg")
+		#deliveryDisclaimer
+			p The delivery time indicated is an estimate. Due to busy times and shipping, it could take longer than estimated. Please keep this in mind when ordering.
+		include ../statics/pug/footer.pug

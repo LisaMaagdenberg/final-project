@@ -4,5 +4,30 @@ html
 		include ../statics/pug/head-links.pug
 	body
 		include ../statics/pug/header.pug
-		
+		#indexBoxes
+			.getInspired
+				.flexing1
+					img.thisPhoto(src="img/jar-of-ideas.jpg")
+				.flexing3
+					h1 What to make...
+					p Are you lost on what to make? Pull a word out of my Jar of Ideas!
+				
+			.getInspired
+				.flexing3
+					h1 Free patterns
+					p Take a look at my free patterns and start crocheting :)
+				.flexing1
+					img.thisPhoto(src="img/rome.jpg")
+		#topSelling
+			h1#topSellingh1 Top selling items 
+			#flexTopSelling
+				.topSellingItem
+					img.thisTopPhoto(src="img/webshop-scarf.jpg")
+					p Bobble scarf
+				.topSellingItem
+					img.thisTopPhoto(src="img/webshop-bear-ducky.jpg")
+					p Bear and ducky
+				.topSellingItem
+					img.thisTopPhoto(src="img/webshop-keychainheart.jpg")
+					p Two hearts on a keychain
 		include ../statics/pug/footer.pug
